@@ -5,6 +5,7 @@ repo = git.Repo()
 number = 0
 file_to_alter = "mine.txt"
 signature = input("signature (hex) > ")
+message = input("commit message > ")
 
 
 while number < 10000:
@@ -12,7 +13,7 @@ while number < 10000:
         f.write(str(number))
         number += 1
     repo.index.add(file_to_alter)
-    repo.index.commit("mining, try " + str(number))
+    repo.index.commit(message)
     #print(repo.head.object.hexsha)
     if repo.head.object.hexsha.startswith(signature):
         break
