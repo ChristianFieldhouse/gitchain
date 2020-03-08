@@ -4,7 +4,7 @@ import git
 repo = git.Repo()
 number = 0
 
-while number < 10:
+while number < 1000:
     with open("mine.txt", "w") as f:
         f.write(str(number))
         number += 1
