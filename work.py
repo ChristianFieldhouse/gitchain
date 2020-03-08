@@ -4,8 +4,6 @@ import git
 repo = git.Repo()
 number = 0
 
-print(repo.head.object.hexsha)
-
 while number < 10:
     with open("mine.txt", "w") as f:
         f.write(str(number))
