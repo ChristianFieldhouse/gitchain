@@ -14,7 +14,7 @@ while number < 10000:
     repo.index.add(file_to_alter)
     repo.index.commit("mining, try " + str(number))
     #print(repo.head.object.hexsha)
-    if repo.head.object.hexsha.startswith("cf"):
+    if repo.head.object.hexsha.startswith(signature):
         break
     repo.branches[0].reference = repo.commit("master^")
 
