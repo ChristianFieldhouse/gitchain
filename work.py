@@ -11,6 +11,8 @@ while number < 10:
     repo.index.add("mine.txt")
     repo.index.commit("testing " + str(number))
     print(repo.head.object.hexsha)
+    if repo.head.object.hexsha.startswith("cf"):
+        break
     repo.branches[0].reference = repo.commit("master^")
 
 #repo.index.commit("commit altered to make a nicer hash")
