@@ -11,7 +11,7 @@ while number < 10:
         f.write(str(number))
         number += 1
     repo.index.add("mine.txt")
-    repo.index.commit("testing")
+    repo.index.commit("testing " + str(number))
     print(repo.head.object.hexsha)
     repo.head.reference = repo.commit("HEAD^")
     repo.head.reset(index=True, working_tree=True)
