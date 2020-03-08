@@ -6,11 +6,12 @@ number = 0
 
 print(repo.head.object.hexsha)
 
-while number < 1000:
+while number < 10:
     with open("mine.txt", "w") as f:
         f.write(number)
     repo.index.add("mine.txt")
     print(repo.head.object.hexsha)
+    repo.head.reset(index=True, working_tree=True)
 
 repo.index.commit("commit altered to make a nicer hash")
 repo.remotes.origin.push()
