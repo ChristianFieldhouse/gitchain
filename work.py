@@ -13,6 +13,7 @@ while number < 10:
     repo.index.add("mine.txt")
     repo.index.commit("testing")
     print(repo.head.object.hexsha)
+    repo.head.reference = repo.commit("HEAD^")
     repo.head.reset(index=True, working_tree=True)
 
 #repo.index.commit("commit altered to make a nicer hash")
