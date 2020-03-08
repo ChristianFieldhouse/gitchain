@@ -3,14 +3,17 @@ import git
 
 repo = git.Repo()
 number = 0
+file_to_alter = input("file to alter > ")
+signature = input("signature (hex) > ")
 
-while number < 1000:
-    with open("mine.txt", "w") as f:
+
+while number < 10000:
+    with open(file_to_alter, "a") as f:
         f.write(str(number))
         number += 1
-    repo.index.add("mine.txt")
+    repo.index.add(file_to_alter)
     repo.index.commit("mining, try " + str(number))
-    print(repo.head.object.hexsha)
+    #print(repo.head.object.hexsha)
     if repo.head.object.hexsha.startswith("cf"):
         break
     repo.branches[0].reference = repo.commit("master^")
