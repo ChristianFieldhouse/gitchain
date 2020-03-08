@@ -8,7 +8,7 @@ print(repo.head.object.hexsha)
 
 while number < 10:
     with open("mine.txt", "w") as f:
-        f.write(number)
+        f.write(str(number))
     repo.index.add("mine.txt")
     print(repo.head.object.hexsha)
     repo.head.reset(index=True, working_tree=True)
