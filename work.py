@@ -3,12 +3,12 @@ import git
 
 repo = git.Repo()
 number = 0
-file_to_alter = input("file to alter > ")
+file_to_alter = "mine.txt"
 signature = input("signature (hex) > ")
 
 
 while number < 10000:
-    with open(file_to_alter, "a") as f:
+    with open(file_to_alter, "w") as f:
         f.write(str(number))
         number += 1
     repo.index.add(file_to_alter)
