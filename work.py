@@ -9,7 +9,9 @@ print(repo.head.object.hexsha)
 while number < 10:
     with open("mine.txt", "w") as f:
         f.write(str(number))
+        number += 1
     repo.index.add("mine.txt")
+    repo.index.commit("testing")
     print(repo.head.object.hexsha)
     repo.head.reset(index=True, working_tree=True)
 
