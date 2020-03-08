@@ -15,6 +15,6 @@ while number < 10:
     print(repo.head.object.hexsha)
     repo.head.reset(index=True, working_tree=True)
 
-repo.index.commit("commit altered to make a nicer hash")
-repo.remotes.origin.push()
-print("sucessfully changed the hash")
+#repo.index.commit("commit altered to make a nicer hash")
+#repo.remotes.origin.push()
+#print("sucessfully changed the hash")
